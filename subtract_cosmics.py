@@ -115,7 +115,7 @@ def subtract_cosmic_spikes_moll(x, y, width=0, display=2):
 
 if __name__ == '__main__':
 
-    s2test = np.genfromtxt('test_data/graphene_2x240s.txt')
+    s2test = np.genfromtxt('graphene_2x240s.txt')
     wn = s2test[:,0]
     graphene_w_cosmics = s2test[:,1]
     y_sub = subtract_cosmic_spikes_moll(wn, graphene_w_cosmics, width=3.2, display=1)

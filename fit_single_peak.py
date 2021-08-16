@@ -183,7 +183,7 @@ def fit_single_peak(derspec, peak_position=None, fitrange=None, peaksign=0, fwhm
 
 if __name__ == '__main__':
     
-    s2test = np.genfromtxt('test_data/graphene_2x240s.txt')
+    s2test = np.genfromtxt('graphene_2x240s.txt')
     wn = s2test[:,0]
     graphene_w_cosmics = s2test[:,1]
 
