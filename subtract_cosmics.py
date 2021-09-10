@@ -28,7 +28,7 @@ def subtract_cosmic_spikes_moll(x, y, width=0, display=2):
     """
     
     if width==0:
-        width = np.abs(x[1]-x[0])
+        width = np.abs(x[-1]-x[0])/(len(x)-1) * 1.5
         if display > 0:
             print (' [auto]width = ', width)
         width_in_pixels = 3
@@ -115,9 +115,13 @@ def subtract_cosmic_spikes_moll(x, y, width=0, display=2):
 
 if __name__ == '__main__':
 
-    s2test = np.genfromtxt('graphene_2x240s.txt')
-    wn = s2test[:,0]
-    graphene_w_cosmics = s2test[:,1]
-    y_sub = subtract_cosmic_spikes_moll(wn, graphene_w_cosmics, width=3.2, display=1)
+    ## Test sample 1: graphene
+    s2test1 = np.genfromtxt('graphene_2x240s.txt')
+    wn1 = s2test1[:,0]
+    graphene_w_cosmics = s2test1[:,1]
+    y_sub1 = subtract_cosmic_spikes_moll(wn1, graphene_w_cosmics, width=3.2, display=1)
     
-
+    ## Test sample 2: biological sample from https://doi.org/10.1016/j.dib.2019.104694
+    # s2test2 = np.genfromtxt('pkyj_day28.txt') #("D:\imt\spikes\checking\Raw Raman spectrum dataset\In vitro Cuvettes\Aqueous humor from rabbit eyes\pkyj_day28.txt")[1:,:]
+    # wn2 = s2test2[:,0]
+    # y_sub2 = subtract_cosmic_spikes_moll(wn2, s2test2[:,1], display=1)
