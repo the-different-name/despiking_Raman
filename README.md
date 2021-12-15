@@ -1,4 +1,7 @@
-Detection and removal of cosmic peaks in Raman spectra
+Detection and removal of cosmic peaks in Raman spectra.
+
+The algorithm described in the paper https://doi.org/10.1002/jrs.6277
+
 
 Run subtract_cosmics.py as the main file.
 
